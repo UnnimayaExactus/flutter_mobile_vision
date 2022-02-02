@@ -83,7 +83,7 @@ class FlutterMobileVision {
     Size preview = PREVIEW,
     int camera = CAMERA_BACK,
     double fps = 2.0,
-    Colors color,
+    Color color,
   }) async {
     Map<String, dynamic> arguments = {
       'flash': flash,
