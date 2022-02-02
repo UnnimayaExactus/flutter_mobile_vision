@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 
 class FlutterMobileVision {
   static const MethodChannel _channel = MethodChannel('flutter_mobile_vision');
@@ -82,6 +83,7 @@ class FlutterMobileVision {
     Size preview = PREVIEW,
     int camera = CAMERA_BACK,
     double fps = 2.0,
+    Colors color,
   }) async {
     Map<String, dynamic> arguments = {
       'flash': flash,
@@ -93,6 +95,7 @@ class FlutterMobileVision {
       'previewHeight': preview != null ? preview.height : PREVIEW.height,
       'camera': camera,
       'fps': fps,
+      'color': color
     };
 
     final List list = await _channel.invokeMethod('read', arguments);
